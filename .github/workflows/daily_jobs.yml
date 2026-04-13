@@ -1,0 +1,57 @@
+name: 🚀 Daily Fresher Job Alert v2
+
+on:
+  schedule:
+    - cron: '30 2 * * *'   # 8:00 AM IST every day
+  workflow_dispatch:
+    inputs:
+      location_filter:
+        description: 'Filter by city (Pune / Bangalore / Hyderabad) — blank = all India'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-jobs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30       # more sources = more time
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: 📦 Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: 🔍 Fetch jobs from all sources
+        env:
+          LOCATION_FILTER:  ${{ github.event.inputs.location_filter }}
+          ADZUNA_APP_ID:    ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY:   ${{ secrets.ADZUNA_APP_KEY }}
+        run: python fetch_jobs.py
+
+      - name: 💾 Commit updated JSON files
+        run: |
+          git config user.name  "Fresher Job Bot v2"
+          git config user.email "bot@fresher-jobs.local"
+          git add seen_jobs.json jobs_log.json || true
+          git diff --staged --quiet || git commit -m "chore: job update [$(date +'%Y-%m-%d')]"
+          git push || true
+
+      - name: 📊 Upload log artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: jobs-log-${{ github.run_number }}
+          path: jobs_log.json
+          retention-days: 30
