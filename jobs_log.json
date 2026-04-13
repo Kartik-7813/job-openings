@@ -1,1 +1,392 @@
-[]
+[
+  {
+    "title": "Technical Support Operator",
+    "company": "KnownHost",
+    "location": "USA",
+    "url": "https://remotive.com/remote-jobs/customer-service/technical-support-operator-2088696",
+    "source": "Remotive",
+    "summary": "THIS IS WHO YOU ARE\u2026 \n You are our front line in the battle for exceptional customer experience at the 24/7/365 help desk. \n Ideally, you have experienced terrible web hosting customer service and have vowed that will never happen on your watch! \n You are responsible for seeing that our customers have excellent customer service by doing what you do every day -> exceeding customer expectations. \n WHAT DO WE NEED FROM YOU?  Well, you should be customer focused, great under pressure, and ready to e",
+    "id": "dab8eb3939662d6951ce3e0f1f48dc20",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Project Coordinator",
+    "company": "C4Media Inc.",
+    "location": "Brazil, Argentina",
+    "url": "https://remotive.com/remote-jobs/project-management/junior-project-coordinator-2088663",
+    "source": "Remotive",
+    "summary": "C4Media, Inc.  is seeking a motivated, fully remote  Junior Project Coordinator (contractor)  to join our global team. In this role, you will provide essential support for our expanding online learning and certification cohorts. \n As a Junior Project Coordinator, you will assist the team in planning and executing our virtual learning programs for software professionals. This is a foundational, entry-level role designed for someone who thrives on organization, clear communication, and the \"behind",
+    "id": "0a5ef1a8c8a718dc91fb7af5ea7dc6d5",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Customer Support Representative",
+    "company": "AutoHDR",
+    "location": "USA",
+    "url": "https://remotive.com/remote-jobs/customer-service/customer-support-representative-2088655",
+    "source": "Remotive",
+    "summary": "Company Description \n \u00a0 \n AutoHDR is an AI real estate photo editing platform. We launched less than a year ago and already edit 25% of U.S. real estate listings. \n \u00a0 \n We\u2019re building a category-defining product and looking for people who want to help us scale it fast. This is an early hire on a small team of A players changing the industry. \n \u00a0 \n Role Description \n \u00a0 \n We\u2019re hiring a Customer Support Rep to own inbound support and make sure the product is delivered well to users. \n \u00a0 \n This is ",
+    "id": "82aea723a5f6412384c98c398ff94a6a",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Full-Stack Developer",
+    "company": "ELECTE S.R.L.",
+    "location": "Worldwide",
+    "url": "https://remotive.com/remote-jobs/software-development/full-stack-developer-2088652",
+    "source": "Remotive",
+    "summary": "We are looking for a strong Full-Stack Developer to execute product features and contribute to our core platform development. Your focus will be clean, scalable implementation and high-quality execution. This role is ideal for a developer who enjoys building real product features end-to-end in a focused, no-bureaucracy environment. \n \u00a0 \n Responsibilities \n \n Implement frontend features using TypeScript \n Develop backend services and APIs using Supabase / PostgreSQL \n Contribute to our Python-bas",
+    "id": "c1ee9d275b13aa09ed8f79446f91390d",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Java Developer \u2013 Fresher (TCS NextStep)",
+    "company": "TCS",
+    "location": "Pan India",
+    "url": "https://nextstep.tcs.com/campus/#/jobs",
+    "source": "TCS Careers",
+    "summary": "Visit TCS NextStep portal for all fresher openings including Java roles.",
+    "id": "5085aeffc75eb46436f039f2cdf1e147",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Systems Engineer / Technology Analyst \u2013 Fresher",
+    "company": "Infosys",
+    "location": "Pan India",
+    "url": "https://career.infosys.com/joblist#srch=true&category=fresher",
+    "source": "Infosys Careers",
+    "summary": "Infosys hires 0-2 year exp freshers as Systems Engineers and Technology Analysts. Java, Spring, and J2EE are core tech stacks.",
+    "id": "9f7fa18744995f088b678750e7418121",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Project Engineer / Junior Associate Software Engineer",
+    "company": "Wipro",
+    "location": "Pan India",
+    "url": "https://careers.wipro.com/careers-home/jobs?tags2=Campus",
+    "source": "Wipro Careers",
+    "summary": "Wipro hires freshers via Elite NTH and Turbo programs. Java, Spring Boot, and microservices roles available. Check the Wipro careers portal for active drives.",
+    "id": "8ad4ab2124250d6fdf10ff196203b99d",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "GenC / GenC Next \u2013 Software Developer (Java)",
+    "company": "Cognizant",
+    "location": "Pan India",
+    "url": "https://careers.cognizant.com/global/en/c/fresher-jobs",
+    "source": "Cognizant Careers",
+    "summary": "Cognizant GenC program hires freshers for developer roles. Strong Java track available. Check the freshers section on the Cognizant careers portal.",
+    "id": "d80aae4c564d5b63f539cf09000837ca",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Graduate Engineer Trainee \u2013 Java / Software",
+    "company": "HCLTech",
+    "location": "Pan India",
+    "url": "https://www.hcltech.com/careers/search-jobs?keyword=java",
+    "source": "HCLTech Careers",
+    "summary": "HCLTech regularly hires GETs and junior developers. Java, Spring Boot roles available. Check their careers portal for active drives.",
+    "id": "3f42f99d6bc2fa4866d0f9cedaf461b3",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Software Engineer / Analyst (Fresher) \u2013 Java",
+    "company": "Capgemini",
+    "location": "Bangalore / Pune / Hyderabad",
+    "url": "https://www.capgemini.com/in-en/careers/job-search/?search=java&experience=fresher",
+    "source": "Capgemini Careers",
+    "summary": "Capgemini hires freshers in large batches. Java, Spring Boot, and J2EE are common stacks. Off-campus drives announced regularly.",
+    "id": "7a2bfe46e4204675be6f80099aa186c2",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Software Engineer Trainee \u2013 Java / Full Stack",
+    "company": "Tech Mahindra",
+    "location": "Pan India",
+    "url": "https://careers.techmahindra.com/search/#q=java&t=Jobs",
+    "source": "Tech Mahindra Careers",
+    "summary": "Tech Mahindra SMART Hiring program for freshers. Java, Spring, Angular roles. 3.25 LPA average for freshers.",
+    "id": "cb372e9170ffb9bc354ce4a7f0768d2f",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Associate Software Engineer (Fresher) \u2013 Java/Full Stack",
+    "company": "Accenture",
+    "location": "Bangalore / Hyderabad / Pune",
+    "url": "https://www.accenture.com/in-en/careers/explore-careers/area-of-interest/technology",
+    "source": "Accenture Careers",
+    "summary": "Accenture hires fresher batches as ASE/AASE. Java and Spring Boot roles are very common. Check careers portal for active drives.",
+    "id": "4e525ccf405703cf46c197d44922d1ba",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Java Developer / Associate Engineer",
+    "company": "Mphasis",
+    "location": "Bangalore / Pune / Chennai",
+    "url": "https://careers.mphasis.com/search/#q=java&t=Jobs",
+    "source": "Mphasis Careers",
+    "summary": "Mphasis frequently hires Java freshers for banking & fintech projects. 4-5 LPA for freshers.",
+    "id": "719b5080c9521fdd8ddf74e9d0023fa7",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Associate Software Engineer \u2013 Java / Spring Boot",
+    "company": "Persistent Systems",
+    "location": "Pune / Nagpur / Hyderabad",
+    "url": "https://careers.persistent.com/jobs?keywords=java",
+    "source": "Persistent Careers",
+    "summary": "Persistent is one of India's best product-focused companies. ASE roles for Java freshers with good salary (5-6 LPA).",
+    "id": "9817ab3b71a998dc9fd6369fd56ec19a",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Software Engineer / Trainee \u2013 Java",
+    "company": "Hexaware Technologies",
+    "location": "Chennai / Mumbai / Pune",
+    "url": "https://hexaware.com/careers/job-openings/?search=java",
+    "source": "Hexaware Careers",
+    "summary": "Hexaware hires Java freshers regularly. Strong automation and Java microservices focus. Fresher salary 3-4 LPA.",
+    "id": "8f3ae373c960a07fd89be797f0a651d3",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Associate Engineer / Software Trainee \u2013 Java",
+    "company": "Zensar Technologies",
+    "location": "Pune / Hyderabad",
+    "url": "https://www.zensar.com/careers",
+    "source": "Zensar Careers",
+    "summary": "Zensar Technologies (RPG Group) actively hires Java freshers. 3-5 LPA salary range. Great work culture for freshers.",
+    "id": "f3b533335fbf6d1589f5ef23ab01a3c5",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Software Developer \u2013 Java / Spring",
+    "company": "Coforge (NIIT Tech)",
+    "location": "Noida / Hyderabad / Bangalore",
+    "url": "https://www.coforge.com/careers/job-search?keyword=java",
+    "source": "Coforge Careers",
+    "summary": "Coforge (formerly NIIT Technologies) is an underrated IT company with strong Java hiring. Good projects in banking and insurance domains.",
+    "id": "574c42d397f022191524a5e1ab3cffa3",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Java Developer / Technology Analyst",
+    "company": "Mastech Digital",
+    "location": "Bangalore / Hyderabad",
+    "url": "https://www.mastechdigital.com/careers",
+    "source": "Mastech Careers",
+    "summary": "Mastech Digital hires Java freshers for US-facing projects. Good learning environment with digital transformation work.",
+    "id": "2f2217051a913233d3f5412e9bea6c8f",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Software Engineer Trainee / Associate \u2013 Java",
+    "company": "LTIMindtree",
+    "location": "Pan India",
+    "url": "https://www.ltimindtree.com/careers/",
+    "source": "LTIMindtree Careers",
+    "summary": "LTIMindtree (L&T + Mindtree merge) has strong Java hiring for freshers. Banking and insurance domain projects. 3.5-5 LPA.",
+    "id": "085f60214468460551a0f7b4f5f16c7d",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Associate Professional Software Engineer \u2013 Java",
+    "company": "DXC Technology",
+    "location": "Bangalore / Chennai / Hyderabad",
+    "url": "https://dxc.wd1.myworkdayjobs.com/DXCCareers?q=java",
+    "source": "DXC Technology Careers",
+    "summary": "DXC Technology is an underrated IT giant that hires large fresher batches. Java and Spring Boot are core stacks. Good salary and learning.",
+    "id": "a7b96b6fd6c351346a1ab20c5373a212",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Software Engineer / Associate \u2013 Java, Spring Boot",
+    "company": "Happiest Minds",
+    "location": "Bangalore / Noida / Hyderabad",
+    "url": "https://www.happiestminds.com/careers/",
+    "source": "Happiest Minds Careers",
+    "summary": "Happiest Minds is a born-digital company with strong Java focus. Great culture and learning for freshers. 4-6 LPA.",
+    "id": "1961cc4bd045c7ba344f97f573212df7",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Software Developer \u2013 Java / Backend",
+    "company": "KPIT Technologies",
+    "location": "Pune / Bangalore",
+    "url": "https://www.kpit.com/careers/",
+    "source": "KPIT Careers",
+    "summary": "KPIT focuses on automotive software but has strong Java backend roles. Underrated company for freshers. 4-5.5 LPA.",
+    "id": "ff017f8b29a8bbbd0987886b34bb2ca0",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Trainee Engineer / Junior Developer \u2013 Java",
+    "company": "Cyient",
+    "location": "Hyderabad / Bangalore",
+    "url": "https://www.cyient.com/company/careers",
+    "source": "Cyient Careers",
+    "summary": "Cyient engineering services company hires Java freshers for digital transformation projects. Good work-life balance.",
+    "id": "0e1b903eb3793e2d149397d595cb6283",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Software Engineer \u2013 Java / Spring Boot",
+    "company": "Sonata Software",
+    "location": "Bangalore / Hyderabad",
+    "url": "https://www.sonata-software.com/careers",
+    "source": "Sonata Careers",
+    "summary": "Sonata Software is a Bangalore-based IT company with strong Java hiring. Microsoft & SAP partner. Good freshers program.",
+    "id": "0672677701187ede1791af7bd206eb2e",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Associate Programmer / Junior Java Developer",
+    "company": "Birlasoft",
+    "location": "Noida / Pune / Hyderabad",
+    "url": "https://www.birlasoft.com/company/career",
+    "source": "Birlasoft Careers",
+    "summary": "Birlasoft (CK Birla Group) is an underrated IT company with Java-heavy projects. Good salary 3.5-5 LPA for freshers.",
+    "id": "11d7229a72394df8f5d536e694744863",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Graduate Engineer Trainee \u2013 Software / Java",
+    "company": "Tata Elxsi",
+    "location": "Bangalore / Pune / Chennai",
+    "url": "https://www.tataelxsi.com/careers",
+    "source": "Tata Elxsi Careers",
+    "summary": "Tata Elxsi is a premium engineering company. Java roles for embedded and digital domains. Competitive salary 4-7 LPA for freshers.",
+    "id": "6598eabe02ec7210d578ba506e277b55",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Software Engineer \u2013 Java, Embedded",
+    "company": "Sasken Technologies",
+    "location": "Bangalore / Chennai",
+    "url": "https://www.sasken.com/company/career",
+    "source": "Sasken Careers",
+    "summary": "Sasken does product engineering for global clients. Java and embedded roles for freshers. Underrated gem in Bangalore.",
+    "id": "ae5219f98134274b0c3aecc96e575257",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Software Engineer Trainee \u2013 Java / Spring",
+    "company": "R Systems International",
+    "location": "Noida / Bangalore",
+    "url": "https://www.rsystems.com/careers",
+    "source": "R Systems Careers",
+    "summary": "R Systems is an underrated company with Java-heavy digital projects. Freshers with Java skills are regularly hired.",
+    "id": "edef28244da23c6a82748944f42f7ee8",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Associate Software Engineer \u2013 Java / Microservices",
+    "company": "YASH Technologies",
+    "location": "Indore / Pune / Hyderabad",
+    "url": "https://www.yashtechnologies.com/careers",
+    "source": "YASH Technologies Careers",
+    "summary": "YASH Technologies is growing fast. Java and SAP hybrid roles for freshers. Indore base is great for tier-2 city candidates. 3.5-5 LPA.",
+    "id": "f27eafd98898423676b7daa180f38119",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Java Developer / Software Trainee",
+    "company": "Infobeans Technologies",
+    "location": "Indore / Pune",
+    "url": "https://www.infobeans.com/careers/",
+    "source": "Infobeans Careers",
+    "summary": "Infobeans is a growing Indore-based IT company. Very Java-heavy stack. Great for tier-2 city candidates. Fresher salary 3-4.5 LPA.",
+    "id": "c95f1b4f6f8053a660c31a02a85b8e9e",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Associate Staff Engineer \u2013 Java / Spring Boot",
+    "company": "Nagarro",
+    "location": "Gurugram / Pune / Bangalore",
+    "url": "https://www.nagarro.com/en/careers",
+    "source": "Nagarro Careers",
+    "summary": "Nagarro is a premium engineering company. Strong Java track for freshers. Known for great engineering culture and growth opportunities.",
+    "id": "82470e9845e2dbca52c295c2c5fe2759",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Software Engineer I \u2013 Java / Backend",
+    "company": "GlobalLogic",
+    "location": "Hyderabad / Noida / Bangalore",
+    "url": "https://www.globallogic.com/careers/",
+    "source": "GlobalLogic Careers",
+    "summary": "GlobalLogic (Hitachi Group) does product engineering. Java backend roles for freshers. Known for good learning environment.",
+    "id": "b6d170fb86f79b70d811fa101184c1b5",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Java Developer / Trainee",
+    "company": "Virtusa",
+    "location": "Hyderabad / Chennai / Pune",
+    "url": "https://careers.virtusa.com/jobs?keyword=java",
+    "source": "Virtusa Careers",
+    "summary": "Virtusa focuses on banking domain with heavy Java usage. Freshers are hired for Java/Spring Boot projects. 3.5-5 LPA.",
+    "id": "709728e4f415bd4ceac0d179a5647322",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Software Engineer / Technology Analyst \u2013 Java",
+    "company": "NTT Data",
+    "location": "Bangalore / Pune / Chennai",
+    "url": "https://in.nttdata.com/careers",
+    "source": "NTT Data Careers",
+    "summary": "NTT Data is a top global IT firm that hires Java freshers. Good salary 4-5.5 LPA. Banking and telecom domain Java projects.",
+    "id": "6a82f72e7fbed17b4238bba6b45891f4",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Junior Software Engineer \u2013 Java / Spring",
+    "company": "EPAM Systems",
+    "location": "Hyderabad / Pune / Bangalore",
+    "url": "https://www.epam.com/careers/job-listings?search=java&experience=junior",
+    "source": "EPAM Careers",
+    "summary": "EPAM is one of the world's best engineering companies. Java roles for freshers with strong DSA skills. Great career growth. 5-7 LPA.",
+    "id": "4bf1038ff32938282d44ac2f5e077fe4",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Associate Software Developer \u2013 Java / Cloud",
+    "company": "Oracle India",
+    "location": "Bangalore / Hyderabad",
+    "url": "https://careers.oracle.com/jobs/#en/sites/jobsearch/jobs?q=java&location=India",
+    "source": "Oracle Careers",
+    "summary": "Oracle directly hires Java developers. ADE / Associate roles for freshers in their cloud and database divisions. 6-10 LPA range.",
+    "id": "c393b95c9c67dc22d2c76c29445ca755",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Software Engineer \u2013 Java (Fresher / Associate)",
+    "company": "JPMorgan Chase",
+    "location": "Bangalore / Mumbai / Hyderabad",
+    "url": "https://careers.jpmorgan.com/global/en/students/programs",
+    "source": "JPMorgan Careers",
+    "summary": "JPMorgan's tech centers in India hire Java engineers. Strong fintech exposure. Competitive pay 8-14 LPA for freshers with good DSA.",
+    "id": "93b5445c33114bc904b4cf1b8d62e9a1",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Graduate Analyst / Junior Java Developer \u2013 Technology",
+    "company": "Deutsche Bank",
+    "location": "Pune / Bangalore",
+    "url": "https://careers.db.com/professionals/search-roles/#search?disciplineIds=1009",
+    "source": "Deutsche Bank Careers",
+    "summary": "Deutsche Bank's Pune and Bangalore tech centers hire Java developers. Banking domain with strong Spring Boot usage. 6-10 LPA.",
+    "id": "cf315d04f029258e9b4452044314631b",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  },
+  {
+    "title": "Graduate Developer / Junior Consultant \u2013 Java",
+    "company": "ThoughtWorks",
+    "location": "Bangalore / Chennai / Hyderabad",
+    "url": "https://www.thoughtworks.com/en-in/careers",
+    "source": "ThoughtWorks Careers",
+    "summary": "ThoughtWorks is legendary for engineering culture. Java roles with TDD, pair programming. Competitive pay for freshers 6-8 LPA.",
+    "id": "b05b54e62518533e9946c51e6986996f",
+    "fetched_at": "2026-04-13T06:36:52.806760+00:00"
+  }
+]
