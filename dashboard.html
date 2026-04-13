@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresher Job Board v2 — Java & SWE India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050508;--s0:#0b0c14;--s1:#10111e;--s2:#161828;
+  --border:#1f2235;--border2:#2d3050;
+  --accent:#7c6dff;--ag:#00dfa2;--ao:#ffb347;--ar:#ff6b8a;--at:#38d4d4;
+  --text:#dde0f0;--muted:#5a5e80;--dim:#252840;
+  --r:14px;--r2:10px;--r3:8px;
+}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* dot pattern bg */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:radial-gradient(#1a1d35 1px,transparent 1px);
+  background-size:24px 24px;opacity:.6;pointer-events:none;z-index:0;
+}
+/* top glow */
+body::after{
+  content:'';position:fixed;top:-400px;left:50%;transform:translateX(-50%);
+  width:1000px;height:700px;
+  background:radial-gradient(ellipse,rgba(124,109,255,.06) 0%,transparent 68%);
+  pointer-events:none;z-index:0;
+}
+
+.wrap{position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:0 20px}
+
+/* ── HEADER ── */
+header{padding:36px 0 24px;border-bottom:1px solid var(--border);margin-bottom:24px}
+.hrow{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+.brand{display:flex;align-items:center;gap:14px}
+.logo{
+  width:50px;height:50px;border-radius:14px;flex-shrink:0;
+  background:linear-gradient(135deg,#7c6dff,#00dfa2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-weight:700;font-size:19px;color:#fff;
+  box-shadow:0 0 28px rgba(124,109,255,.45);
+}
+.brand-info h1{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;letter-spacing:-.3px}
+.brand-info p{font-size:12px;color:var(--muted);margin-top:3px}
+
+.badges{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.live-badge{
+  display:flex;align-items:center;gap:7px;
+  background:rgba(0,223,162,.07);border:1px solid rgba(0,223,162,.2);
+  border-radius:100px;padding:5px 14px;font-size:11px;color:var(--ag);
+  font-family:'JetBrains Mono',monospace;
+}
+.dot{width:6px;height:6px;background:var(--ag);border-radius:50%;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.count-badge{
+  background:rgba(124,109,255,.1);border:1px solid rgba(124,109,255,.25);
+  border-radius:100px;padding:5px 14px;font-size:11px;color:var(--accent);
+  font-family:'JetBrains Mono',monospace;
+}
+.btn-refresh{
+  background:var(--s1);border:1px solid var(--border2);color:var(--muted);
+  border-radius:var(--r3);padding:7px 14px;font-size:12px;
+  font-family:'JetBrains Mono',monospace;cursor:pointer;transition:all .2s;
+}
+.btn-refresh:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── STATS ── */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:11px;margin-bottom:22px}
+.stat{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;transition:border-color .2s}
+.stat:hover{border-color:var(--border2)}
+.stat-n{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;line-height:1;margin-bottom:5px}
+.stat-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.9px}
+.c1{color:var(--accent)}.c2{color:var(--ag)}.c3{color:var(--ao)}.c4{color:var(--ar)}.c5{color:var(--at)}
+
+/* ── CONTROLS ── */
+.controls{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}
+.search-wrap{position:relative;flex:1;min-width:220px}
+.search-wrap svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted);pointer-events:none}
+input[type=text]{
+  width:100%;background:var(--s1);border:1px solid var(--border);border-radius:var(--r2);
+  padding:10px 13px 10px 38px;color:var(--text);
+  font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color .2s;
+}
+input[type=text]:focus{border-color:var(--accent)}
+input[type=text]::placeholder{color:var(--muted)}
+select{
+  background:var(--s1);border:1px solid var(--border);border-radius:var(--r2);
+  padding:10px 13px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;
+  outline:none;cursor:pointer;transition:border-color .2s;
+}
+select:focus{border-color:var(--accent)}
+.btn-clear{
+  background:transparent;border:1px solid var(--border);color:var(--muted);
+  border-radius:var(--r2);padding:10px 16px;font-family:'JetBrains Mono',monospace;
+  font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.btn-clear:hover{border-color:var(--ar);color:var(--ar)}
+
+/* ── TAGS ── */
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
+.tag{
+  background:var(--s0);border:1px solid var(--border);border-radius:100px;
+  padding:5px 13px;font-size:12px;color:var(--muted);cursor:pointer;
+  transition:all .2s;font-family:'JetBrains Mono',monospace;user-select:none;
+}
+.tag:hover{border-color:var(--border2);color:var(--text)}
+.tag.on{background:rgba(124,109,255,.12);border-color:rgba(124,109,255,.45);color:var(--accent)}
+
+/* ── TIER FILTER ── */
+.tier-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;align-items:center}
+.tier-label{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-right:4px}
+.tier-btn{
+  background:var(--s0);border:1px solid var(--border);border-radius:var(--r3);
+  padding:5px 13px;font-size:12px;color:var(--muted);cursor:pointer;transition:all .2s;
+  font-family:'JetBrains Mono',monospace;user-select:none;
+}
+.tier-btn:hover{border-color:var(--border2);color:var(--text)}
+.tier-btn.on.t1{background:rgba(124,109,255,.12);border-color:rgba(124,109,255,.4);color:var(--accent)}
+.tier-btn.on.t2{background:rgba(0,223,162,.1);border-color:rgba(0,223,162,.35);color:var(--ag)}
+.tier-btn.on.t3{background:rgba(255,179,71,.1);border-color:rgba(255,179,71,.35);color:var(--ao)}
+.tier-btn.on.t4{background:rgba(56,212,212,.1);border-color:rgba(56,212,212,.35);color:var(--at)}
+.tier-btn.on.tall{background:rgba(255,255,255,.05);border-color:var(--border2);color:var(--text)}
+
+/* ── META ── */
+.meta{font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:14px}
+.meta em{color:var(--ag);font-style:normal}
+
+/* ── GRID ── */
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:13px;margin-bottom:28px}
+
+/* ── CARD ── */
+.card{
+  background:var(--s1);border:1px solid var(--border);border-radius:var(--r);
+  padding:20px 22px;display:flex;flex-direction:column;
+  transition:border-color .18s,transform .18s,box-shadow .18s;
+  animation:pop .22s ease both;position:relative;overflow:hidden;
+}
+.card::before{
+  content:'';position:absolute;inset:0;border-radius:var(--r);
+  background:linear-gradient(135deg,rgba(124,109,255,.04) 0%,transparent 55%);
+  opacity:0;transition:opacity .2s;pointer-events:none;
+}
+.card:hover{border-color:rgba(124,109,255,.5);transform:translateY(-2px);box-shadow:0 10px 40px rgba(124,109,255,.1)}
+.card:hover::before{opacity:1}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* tier accent stripe */
+.card.tier-big  {border-left:3px solid rgba(124,109,255,.6)}
+.card.tier-mid  {border-left:3px solid rgba(0,223,162,.5)}
+.card.tier-underrated{border-left:3px solid rgba(255,179,71,.5)}
+.card.tier-premium{border-left:3px solid rgba(56,212,212,.5)}
+
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:13px}
+.card-left{display:flex;align-items:flex-start;gap:11px;flex:1;min-width:0}
+.avatar{
+  width:42px;height:42px;border-radius:11px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;
+}
+.title-wrap{min-width:0}
+.jtitle{font-size:14px;font-weight:600;line-height:1.3;color:var(--text);margin-bottom:3px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.jcompany{font-size:12px;color:var(--muted)}
+
+/* badge cluster */
+.badges-col{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0}
+.badge{font-size:10px;font-family:'JetBrains Mono',monospace;padding:3px 9px;border-radius:100px;border:1px solid;white-space:nowrap}
+.tier-badge{font-size:9px;padding:2px 7px}
+
+/* source colors */
+.b-indeed     {color:#7c6dff;border-color:rgba(124,109,255,.4);background:rgba(124,109,255,.08)}
+.b-naukri     {color:#ff6b8a;border-color:rgba(255,107,138,.4);background:rgba(255,107,138,.08)}
+.b-glassdoor  {color:#00dfa2;border-color:rgba(0,223,162,.35); background:rgba(0,223,162,.07)}
+.b-remotive   {color:#38d4d4;border-color:rgba(56,212,212,.35);background:rgba(56,212,212,.07)}
+.b-jobicy     {color:#ffb347;border-color:rgba(255,179,71,.35); background:rgba(255,179,71,.07)}
+.b-freshers   {color:#c084fc;border-color:rgba(192,132,252,.35);background:rgba(192,132,252,.07)}
+.b-internshala{color:#ff9f43;border-color:rgba(255,159,67,.35);background:rgba(255,159,67,.07)}
+.b-foundit    {color:#48dbfb;border-color:rgba(72,219,251,.35); background:rgba(72,219,251,.07)}
+.b-adzuna     {color:#a29bfe;border-color:rgba(162,155,254,.35);background:rgba(162,155,254,.07)}
+.b-career     {color:#fdcb6e;border-color:rgba(253,203,110,.35);background:rgba(253,203,110,.07)}
+.b-agg        {color:#81ecec;border-color:rgba(129,236,236,.35);background:rgba(129,236,236,.07)}
+.b-default    {color:var(--muted);border-color:var(--border);background:var(--s0)}
+
+/* tier badge colors */
+.tb-big       {color:#7c6dff;border-color:rgba(124,109,255,.4);background:rgba(124,109,255,.08)}
+.tb-mid       {color:#00dfa2;border-color:rgba(0,223,162,.3);  background:rgba(0,223,162,.06)}
+.tb-underrated{color:#ffb347;border-color:rgba(255,179,71,.3); background:rgba(255,179,71,.06)}
+.tb-premium   {color:#38d4d4;border-color:rgba(56,212,212,.3); background:rgba(56,212,212,.06)}
+
+.card-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:11px}
+.chip{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted)}
+.chip svg{width:13px;height:13px;opacity:.6}
+
+.jdesc{
+  font-size:12px;color:var(--muted);line-height:1.65;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
+  overflow:hidden;margin-bottom:14px;flex:1;
+}
+
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding-top:13px;border-top:1px solid var(--border)}
+.cdate{font-size:11px;color:var(--dim);font-family:'JetBrains Mono',monospace}
+.apply{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(124,109,255,.12);border:1px solid rgba(124,109,255,.4);
+  color:var(--accent);border-radius:var(--r3);padding:7px 15px;
+  font-size:12px;font-family:'JetBrains Mono',monospace;font-weight:600;
+  text-decoration:none;transition:all .18s;
+}
+.apply:hover{background:rgba(124,109,255,.22);border-color:var(--accent);transform:scale(1.03)}
+.apply svg{width:11px;height:11px}
+.apply.disabled{opacity:.3;cursor:not-allowed;pointer-events:none}
+
+/* ── PAGINATION ── */
+.pager{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:44px;flex-wrap:wrap}
+.pg{
+  min-width:36px;height:36px;border-radius:var(--r3);
+  background:var(--s1);border:1px solid var(--border);color:var(--muted);
+  font-family:'JetBrains Mono',monospace;font-size:13px;cursor:pointer;
+  transition:all .18s;display:flex;align-items:center;justify-content:center;
+}
+.pg:hover{border-color:var(--accent);color:var(--accent)}
+.pg.on{background:rgba(124,109,255,.15);border-color:var(--accent);color:var(--accent)}
+.pg:disabled{opacity:.3;cursor:default;pointer-events:none}
+
+/* ── EMPTY ── */
+.empty{grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--muted)}
+.empty-icon{font-size:46px;opacity:.35;margin-bottom:14px}
+.empty h3{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--dim);margin-bottom:6px}
+
+/* ── NOTICE ── */
+#notice{
+  background:rgba(124,109,255,.07);border:1px solid rgba(124,109,255,.18);
+  border-radius:var(--r);padding:16px 20px;margin-bottom:20px;
+  font-size:13px;color:var(--muted);line-height:1.8;display:none;
+}
+#notice strong{color:var(--accent)}
+#notice code{background:rgba(255,255,255,.05);padding:1px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:12px}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);margin-top:6px;padding:24px 0;text-align:center;
+  font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+
+@media(max-width:640px){
+  #grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  header{padding:22px 0 18px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<header>
+  <div class="hrow">
+    <div class="brand">
+      <div class="logo">JB</div>
+      <div class="brand-info">
+        <h1>FRESHER JOB BOARD v2</h1>
+        <p>Java & SWE · 45+ Sources · India · 0–2 yrs</p>
+      </div>
+    </div>
+    <div class="badges">
+      <div class="live-badge"><div class="dot"></div>DAILY AUTO-FETCH</div>
+      <div class="count-badge" id="src-count">45 SOURCES</div>
+      <button class="btn-refresh" onclick="location.reload()">↻ Refresh</button>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-n c1" id="s-total">—</div><div class="stat-l">Total Jobs</div></div>
+  <div class="stat"><div class="stat-n c2" id="s-today">—</div><div class="stat-l">Added Today</div></div>
+  <div class="stat"><div class="stat-n c3" id="s-companies">—</div><div class="stat-l">Companies</div></div>
+  <div class="stat"><div class="stat-n c4" id="s-sources">—</div><div class="stat-l">Sources</div></div>
+  <div class="stat"><div class="stat-n c5" id="s-updated" style="font-size:13px;padding-top:9px">—</div><div class="stat-l">Last Fetch</div></div>
+</div>
+
+<!-- NOTICE -->
+<div id="notice">
+  📂 <strong>Showing sample data.</strong> To load real jobs: push all files to GitHub → enable Actions → run the workflow once. Then host <code>dashboard.html</code> via GitHub Pages — it auto-loads <code>jobs_log.json</code> from the same repo.
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <div class="search-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="q" placeholder="Search title, company, location, description…">
+  </div>
+  <select id="src">
+    <option value="">All Sources</option>
+    <optgroup label="─ Job Boards">
+      <option value="indeed">Indeed</option>
+      <option value="naukri">Naukri</option>
+      <option value="glassdoor">Glassdoor</option>
+      <option value="remotive">Remotive</option>
+      <option value="jobicy">Jobicy</option>
+      <option value="freshersworld">Freshersworld</option>
+      <option value="internshala">Internshala</option>
+      <option value="foundit">Foundit</option>
+      <option value="adzuna">Adzuna</option>
+    </optgroup>
+    <optgroup label="─ Company Career Pages">
+      <option value="tcs">TCS</option>
+      <option value="infosys">Infosys</option>
+      <option value="wipro">Wipro</option>
+      <option value="cognizant">Cognizant</option>
+      <option value="hcl">HCLTech</option>
+      <option value="capgemini">Capgemini</option>
+      <option value="tech mahindra">Tech Mahindra</option>
+      <option value="accenture">Accenture</option>
+      <option value="mphasis">Mphasis</option>
+      <option value="persistent">Persistent</option>
+      <option value="hexaware">Hexaware</option>
+      <option value="zensar">Zensar</option>
+      <option value="ltimindtree">LTIMindtree</option>
+      <option value="dxc">DXC Technology</option>
+      <option value="happiest minds">Happiest Minds</option>
+      <option value="nagarro">Nagarro</option>
+      <option value="oracle">Oracle</option>
+      <option value="thoughtworks">ThoughtWorks</option>
+    </optgroup>
+    <optgroup label="─ Aggregators">
+      <option value="freshershunt">Freshershunt</option>
+      <option value="offcampusjobs">OffCampusJobs4u</option>
+    </optgroup>
+  </select>
+  <select id="loc">
+    <option value="">All Locations</option>
+    <option value="remote">Remote</option>
+    <option value="bangalore">Bangalore</option>
+    <option value="pune">Pune</option>
+    <option value="hyderabad">Hyderabad</option>
+    <option value="mumbai">Mumbai</option>
+    <option value="chennai">Chennai</option>
+    <option value="noida">Noida / Delhi NCR</option>
+    <option value="kolkata">Kolkata</option>
+    <option value="indore">Indore</option>
+    <option value="pan india">Pan India</option>
+  </select>
+  <select id="sort">
+    <option value="newest">Newest First</option>
+    <option value="oldest">Oldest First</option>
+    <option value="company">A–Z Company</option>
+    <option value="source">By Source</option>
+  </select>
+  <button class="btn-clear" onclick="clearAll()">✕ Clear</button>
+</div>
+
+<!-- KEYWORD TAGS -->
+<div class="tags">
+  <span class="tag on" data-tag="">All Roles</span>
+  <span class="tag" data-tag="java">Java</span>
+  <span class="tag" data-tag="spring boot">Spring Boot</span>
+  <span class="tag" data-tag="microservices">Microservices</span>
+  <span class="tag" data-tag="backend">Backend</span>
+  <span class="tag" data-tag="full stack">Full Stack</span>
+  <span class="tag" data-tag="fresher">Fresher</span>
+  <span class="tag" data-tag="trainee">Trainee</span>
+  <span class="tag" data-tag="associate">Associate</span>
+  <span class="tag" data-tag="get">GET</span>
+  <span class="tag" data-tag="remote">Remote</span>
+</div>
+
+<!-- TIER FILTER -->
+<div class="tier-row">
+  <span class="tier-label">Company Tier →</span>
+  <button class="tier-btn on tall" data-tier="" onclick="setTier(this,'')">All</button>
+  <button class="tier-btn t1" data-tier="big" onclick="setTier(this,'big')">🏢 Tier 1 (TCS, Infosys…)</button>
+  <button class="tier-btn t2" data-tier="mid" onclick="setTier(this,'mid')">🏬 Tier 2 (Mphasis, Persistent…)</button>
+  <button class="tier-btn t3" data-tier="underrated" onclick="setTier(this,'underrated')">💎 Underrated (Zensar, Birlasoft…)</button>
+  <button class="tier-btn t4" data-tier="premium" onclick="setTier(this,'premium')">⭐ Premium (Oracle, ThoughtWorks…)</button>
+</div>
+
+<!-- META -->
+<div class="meta" id="meta-line"></div>
+
+<!-- GRID -->
+<div id="grid"></div>
+
+<!-- PAGER -->
+<div class="pager" id="pager"></div>
+
+<footer>
+  v2 · 45+ Sources · Job Boards + 30+ Company Career Pages · Runs daily on GitHub Actions (free)<br><br>
+  Sources: Indeed · Naukri · Glassdoor · Remotive · Jobicy · Freshersworld · Internshala · Foundit · Adzuna<br>
+  + TCS · Infosys · Wipro · Cognizant · HCL · Capgemini · TechM · Accenture · Mphasis · Persistent<br>
+  + Hexaware · Zensar · Coforge · LTIMindtree · DXC · Happiest Minds · KPIT · Cyient · Sonata · Birlasoft<br>
+  + Tata Elxsi · Sasken · R Systems · YASH · Infobeans · Nagarro · GlobalLogic · Virtusa · NTT Data<br>
+  + EPAM · Oracle · JPMorgan · Deutsche Bank · ThoughtWorks · Freshershunt · OffCampusJobs4u<br><br>
+  <a href="README.md">Setup Guide</a> &nbsp;·&nbsp;
+  <a href="https://github.com" target="_blank">GitHub</a> &nbsp;·&nbsp;
+  <a href="#" onclick="scrollTo(0,0);return false">↑ Top</a>
+</footer>
+</div>
+
+<script>
+// ── COMPANY METADATA ──────────────────────────────────────────────────────────
+const COMPANY_TIER = {
+  // Tier 1 Big IT
+  'tcs':'big','infosys':'big','wipro':'big','cognizant':'big',
+  'hcltech':'big','capgemini':'big','tech mahindra':'big','accenture':'big',
+  // Tier 2 Mid
+  'mphasis':'mid','persistent':'mid','hexaware':'mid','ltimindtree':'mid',
+  'dxc':'mid','happiest minds':'mid','ntt data':'mid','virtusa':'mid',
+  'globallogic':'mid','mastech':'mid','coforge':'mid',
+  // Underrated
+  'zensar':'underrated','kpit':'underrated','cyient':'underrated',
+  'sonata':'underrated','birlasoft':'underrated','tata elxsi':'underrated',
+  'sasken':'underrated','r systems':'underrated','yash':'underrated',
+  'infobeans':'underrated','nagarro':'underrated','epam':'underrated',
+  // Premium
+  'oracle':'premium','jpmorgan':'premium','deutsche bank':'premium',
+  'thoughtworks':'premium','amazon':'premium','microsoft':'premium',
+  'google':'premium','zoho':'premium','razorpay':'premium',
+  'swiggy':'premium','phonepe':'premium',
+};
+
+function getTier(company) {
+  const c = (company||'').toLowerCase();
+  for (const [k,v] of Object.entries(COMPANY_TIER)) {
+    if (c.includes(k)) return v;
+  }
+  return '';
+}
+
+const TIER_META = {
+  big:        { label:'Tier 1', cls:'tb-big',        cardCls:'tier-big' },
+  mid:        { label:'Tier 2', cls:'tb-mid',        cardCls:'tier-mid' },
+  underrated: { label:'Hidden Gem', cls:'tb-underrated', cardCls:'tier-underrated' },
+  premium:    { label:'Premium', cls:'tb-premium',   cardCls:'tier-premium' },
+};
+
+// ── SOURCE → BADGE CLASS ──────────────────────────────────────────────────────
+function srcClass(s) {
+  s = (s||'').toLowerCase();
+  if (s.includes('indeed'))       return 'b-indeed';
+  if (s.includes('naukri'))       return 'b-naukri';
+  if (s.includes('glassdoor'))    return 'b-glassdoor';
+  if (s.includes('remotive'))     return 'b-remotive';
+  if (s.includes('jobicy'))       return 'b-jobicy';
+  if (s.includes('freshersworld'))return 'b-freshers';
+  if (s.includes('internshala'))  return 'b-internshala';
+  if (s.includes('foundit'))      return 'b-foundit';
+  if (s.includes('adzuna'))       return 'b-adzuna';
+  if (s.includes('hunt') || s.includes('campus') || s.includes('aggreg')) return 'b-agg';
+  if (s.includes('careers') || s.includes('career')) return 'b-career';
+  return 'b-default';
+}
+
+// ── AVATAR ────────────────────────────────────────────────────────────────────
+const PALETTES = [
+  ['#16103a','#a29bfe'],['#0b2e1f','#00cec9'],['#2a1500','#e17055'],
+  ['#25002e','#fd79a8'],['#001430','#74b9ff'],['#162b00','#55efc4'],
+  ['#2e2000','#ffeaa7'],['#001e2e','#81ecec'],['#2e0e24','#e84393'],
+  ['#0e1f2e','#0984e3'],
+];
+function avatarPalette(name) {
+  let h=0; for(const c of (name||'?')) h=(h*31+c.charCodeAt(0))%PALETTES.length;
+  return PALETTES[Math.abs(h)%PALETTES.length];
+}
+
+// ── UTILS ─────────────────────────────────────────────────────────────────────
+function fmtDate(iso) {
+  if(!iso) return '—';
+  return new Date(iso).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+}
+function ago(iso) {
+  if(!iso) return '';
+  const h = Math.floor((Date.now()-new Date(iso))/36e5);
+  if(h<1) return 'just now';
+  if(h<24) return h+'h ago';
+  return Math.floor(h/24)+'d ago';
+}
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+const PER_PAGE = 21;
+let ALL=[], filtered=[], page=1, activeTag='', activeTier='';
+
+// ── SAMPLE DATA ───────────────────────────────────────────────────────────────
+const SAMPLE = [
+  {id:'s1', title:'Junior Java Developer',company:'Infosys BPM',location:'Pune, India',source:'Indeed',url:'https://in.indeed.com',summary:'Java developer fresher role. Spring Boot, REST APIs, 0-1 year experience. 2024 batch eligible.',fetched_at:new Date(Date.now()-7200000).toISOString()},
+  {id:'s2', title:'Associate Software Engineer – Java',company:'Wipro Technologies',location:'Bangalore, India',source:'Wipro Careers',url:'https://careers.wipro.com',summary:'Entry-level Java position. OOP fundamentals, basic SQL, microservices interest. Salary 3.5 LPA.',fetched_at:new Date(Date.now()-18000000).toISOString()},
+  {id:'s3', title:'Graduate Trainee – Backend (Java)',company:'HCLTech',location:'Chennai, India',source:'HCLTech Careers',url:'https://www.hcltech.com/careers',summary:'Freshers Java microservices role. Spring Boot, Agile, mentorship from seniors.',fetched_at:new Date(Date.now()-28800000).toISOString()},
+  {id:'s4', title:'Junior Backend Engineer – Java/Spring',company:'Razorpay',location:'Bangalore, India',source:'Remotive',url:'https://remotive.com',summary:'Fintech startup. Java, Spring Boot, MySQL. Competitive salary for freshers.',fetched_at:new Date(Date.now()-43200000).toISOString()},
+  {id:'s5', title:'Software Development Engineer I – Java',company:'Amazon India',location:'Hyderabad, India',source:'Indeed',url:'https://in.indeed.com',summary:'SDE I role. Java, DSA, system design basics. 2024 graduates preferred. 12 LPA CTC.',fetched_at:new Date(Date.now()-50400000).toISOString()},
+  {id:'s6', title:'Associate Software Engineer – Java/Spring Boot',company:'Mphasis',location:'Bangalore / Pune',source:'Mphasis Careers',url:'https://careers.mphasis.com',summary:'Banking domain Java role. Spring Boot, REST, JUnit. 4-5 LPA for freshers. Strong Java focus.',fetched_at:new Date(Date.now()-57600000).toISOString()},
+  {id:'s7', title:'Associate Engineer – Java Microservices',company:'Persistent Systems',location:'Pune / Nagpur',source:'Persistent Careers',url:'https://careers.persistent.com',summary:'Product company. Java + Spring Boot microservices. 5-6 LPA. Good growth opportunities.',fetched_at:new Date(Date.now()-64800000).toISOString()},
+  {id:'s8', title:'Software Engineer Trainee – Java',company:'Zensar Technologies',location:'Pune, India',source:'Zensar Careers',url:'https://www.zensar.com/careers',summary:'RPG Group company. Java fresher role. 3-5 LPA. Great work culture. Underrated gem!',fetched_at:new Date(Date.now()-72000000).toISOString()},
+  {id:'s9', title:'Junior Java Developer (Remote)',company:'ThoughtWorks',location:'Remote, India',source:'ThoughtWorks Careers',url:'https://www.thoughtworks.com/careers',summary:'Best engineering culture. TDD, pair programming, Java. 6-8 LPA. Legendary company.',fetched_at:new Date(Date.now()-79200000).toISOString()},
+  {id:'s10',title:'Associate Programmer – Java / Spring',company:'Birlasoft',location:'Noida / Pune',source:'Birlasoft Careers',url:'https://www.birlasoft.com/company/career',summary:'CK Birla Group IT company. Java-heavy projects. Underrated employer. 3.5-5 LPA.',fetched_at:new Date(Date.now()-86400000).toISOString()},
+  {id:'s11',title:'Graduate Engineer Trainee – Java',company:'Tata Elxsi',location:'Bangalore / Pune',source:'Tata Elxsi Careers',url:'https://www.tataelxsi.com/careers',summary:'Premium Tata company. Embedded + digital domain Java roles. 4-7 LPA for freshers.',fetched_at:new Date(Date.now()-93600000).toISOString()},
+  {id:'s12',title:'Junior Software Engineer – Java/Backend',company:'Happiest Minds',location:'Bangalore / Noida',source:'Happiest Minds Careers',url:'https://www.happiestminds.com/careers',summary:'Born-digital company. Java Spring Boot. Great culture. 4-6 LPA. Good growth path.',fetched_at:new Date(Date.now()-100800000).toISOString()},
+  {id:'s13',title:'Associate Software Engineer (GenC)',company:'Cognizant',location:'Pan India',source:'Cognizant Careers',url:'https://careers.cognizant.com',summary:'GenC fresher program. Java, Spring, full stack training. 3.5 LPA. Large batch hiring.',fetched_at:new Date(Date.now()-108000000).toISOString()},
+  {id:'s14',title:'Java Full Stack Trainee',company:'Capgemini India',location:'Mumbai / Pune',source:'Capgemini Careers',url:'https://www.capgemini.com/in-en/careers',summary:'6-month training. Java + Angular. 2024 batch. CTC 4 LPA post-training.',fetched_at:new Date(Date.now()-115200000).toISOString()},
+  {id:'s15',title:'Junior Java REST API Developer',company:'DXC Technology',location:'Bangalore / Chennai',source:'DXC Technology Careers',url:'https://dxc.wd1.myworkdayjobs.com/DXCCareers',summary:'Underrated IT giant. Java microservices, REST. Good fresher intake. 4-5.5 LPA.',fetched_at:new Date(Date.now()-122400000).toISOString()},
+  {id:'s16',title:'Software Engineer I – Java',company:'EPAM Systems',location:'Hyderabad / Pune',source:'EPAM Careers',url:'https://www.epam.com/careers',summary:'World-class engineering company. Java, strong DSA needed. 5-7 LPA. Excellent growth.',fetched_at:new Date(Date.now()-129600000).toISOString()},
+  {id:'s17',title:'Junior Software Engineer – Java',company:'Hexaware Technologies',location:'Chennai / Mumbai',source:'Hexaware Careers',url:'https://hexaware.com/careers',summary:'Java microservices, automation focus. 3-4 LPA for freshers. Good company culture.',fetched_at:new Date(Date.now()-172800000).toISOString()},
+  {id:'s18',title:'Trainee Engineer / Junior Developer',company:'YASH Technologies',location:'Indore / Pune',source:'YASH Technologies Careers',url:'https://www.yashtechnologies.com/careers',summary:'Growing SAP+Java company. Indore base (tier-2 city friendly). 3.5-5 LPA.',fetched_at:new Date(Date.now()-180000000).toISOString()},
+  {id:'s19',title:'Associate Engineer – Java/Spring Boot',company:'LTIMindtree',location:'Pan India',source:'LTIMindtree Careers',url:'https://www.ltimindtree.com/careers',summary:'L&T group. Java Spring Boot for banking/insurance. 3.5-5 LPA. Large fresher intake.',fetched_at:new Date(Date.now()-187200000).toISOString()},
+  {id:'s20',title:'Graduate Developer – Java',company:'NTT Data',location:'Bangalore / Chennai',source:'NTT Data Careers',url:'https://in.nttdata.com/careers',summary:'Global IT firm. Java + banking domain. 4-5.5 LPA. Good training programs.',fetched_at:new Date(Date.now()-194400000).toISOString()},
+  {id:'s21',title:'Associate Software Engineer – Java Developer',company:'Coforge (NIIT Tech)',location:'Noida / Hyderabad',source:'Coforge Careers',url:'https://www.coforge.com/careers',summary:'Formerly NIIT Technologies. Strong Java hiring. Banking & insurance domain.',fetched_at:new Date(Date.now()-259200000).toISOString()},
+  {id:'s22',title:'Software Engineer Trainee – Java',company:'Nagarro',location:'Gurugram / Pune',source:'Nagarro Careers',url:'https://www.nagarro.com/en/careers',summary:'Premium engineering culture. Java + Spring Boot. Known for great practices. 5-7 LPA.',fetched_at:new Date(Date.now()-265000000).toISOString()},
+  {id:'s23',title:'Junior Java Developer – FinTech',company:'PhonePe',location:'Bangalore, India',source:'Remotive',url:'https://remotive.com',summary:'Leading fintech startup. Java for payment systems. DSA skills important. Competitive pay.',fetched_at:new Date(Date.now()-345600000).toISOString()},
+  {id:'s24',title:'Associate Java Developer – Freshers',company:'Mastech Digital',location:'Bangalore / Hyderabad',source:'Mastech Careers',url:'https://www.mastechdigital.com/careers',summary:'Digital transformation company. Java roles for US-facing projects. Good learning.',fetched_at:new Date(Date.now()-352000000).toISOString()},
+  {id:'s25',title:'Java Developer Trainee – Banking Domain',company:'Virtusa',location:'Hyderabad / Chennai',source:'Virtusa Careers',url:'https://careers.virtusa.com',summary:'Banking-focused company. Heavy Java usage. Spring Boot, Hibernate. 3.5-5 LPA.',fetched_at:new Date(Date.now()-432000000).toISOString()},
+];
+
+// ── LOAD ──────────────────────────────────────────────────────────────────────
+async function load() {
+  let real=true;
+  try {
+    const r=await fetch('jobs_log.json?'+Date.now());
+    if(!r.ok) throw 0;
+    const d=await r.json();
+    ALL=Array.isArray(d)&&d.length?d:(real=false,SAMPLE);
+  } catch { real=false; ALL=SAMPLE; }
+  if(!real) document.getElementById('notice').style.display='block';
+  updateStats(); filter();
+}
+
+// ── STATS ─────────────────────────────────────────────────────────────────────
+function updateStats() {
+  document.getElementById('s-total').textContent=ALL.length;
+  const tod=new Date().toDateString();
+  document.getElementById('s-today').textContent=ALL.filter(j=>new Date(j.fetched_at).toDateString()===tod).length;
+  document.getElementById('s-companies').textContent=new Set(ALL.map(j=>j.company)).size;
+  document.getElementById('s-sources').textContent=new Set(ALL.map(j=>j.source)).size;
+  const lat=ALL.map(j=>new Date(j.fetched_at)).filter(d=>!isNaN(d)).sort((a,b)=>b-a)[0];
+  document.getElementById('s-updated').textContent=lat
+    ?lat.toLocaleDateString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):'—';
+}
+
+// ── FILTER ────────────────────────────────────────────────────────────────────
+function filter() {
+  const q=document.getElementById('q').value.toLowerCase();
+  const src=document.getElementById('src').value.toLowerCase();
+  const loc=document.getElementById('loc').value.toLowerCase();
+  const srt=document.getElementById('sort').value;
+
+  filtered=ALL.filter(j=>{
+    const blob=`${j.title} ${j.company} ${j.location} ${j.summary||''}`.toLowerCase();
+    const tier=getTier(j.company);
+    return (!q||blob.includes(q))
+      &&(!src||(j.source||'').toLowerCase().includes(src)||(j.company||'').toLowerCase().includes(src))
+      &&(!loc||(j.location||'').toLowerCase().includes(loc))
+      &&(!activeTag||blob.includes(activeTag))
+      &&(!activeTier||tier===activeTier);
+  });
+
+  if(srt==='newest') filtered.sort((a,b)=>new Date(b.fetched_at)-new Date(a.fetched_at));
+  if(srt==='oldest') filtered.sort((a,b)=>new Date(a.fetched_at)-new Date(b.fetched_at));
+  if(srt==='company') filtered.sort((a,b)=>(a.company||'').localeCompare(b.company||''));
+  if(srt==='source') filtered.sort((a,b)=>(a.source||'').localeCompare(b.source||''));
+
+  page=1; render();
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+function render() {
+  const tot=filtered.length, pages=Math.ceil(tot/PER_PAGE)||1;
+  page=Math.min(page,pages);
+  const start=(page-1)*PER_PAGE, slice=filtered.slice(start,start+PER_PAGE);
+
+  document.getElementById('s-total').textContent=ALL.length;
+  document.getElementById('meta-line').innerHTML=
+    `Showing <em>${Math.min(start+1,tot)}–${Math.min(start+PER_PAGE,tot)}</em> of <em>${tot}</em> jobs`;
+
+  const grid=document.getElementById('grid');
+  if(!slice.length){
+    grid.innerHTML='<div class="empty"><div class="empty-icon">🔍</div><h3>No jobs match your filters</h3><p>Try clearing some filters.</p></div>';
+    document.getElementById('pager').innerHTML=''; return;
+  }
+
+  grid.innerHTML=slice.map((j,i)=>{
+    const [bg,fg]=avatarPalette(j.company);
+    const init=(j.company||'?')[0].toUpperCase();
+    const tier=getTier(j.company);
+    const tm=TIER_META[tier]||null;
+    const hasUrl=j.url&&j.url!=='#'&&j.url.startsWith('http');
+    const a=ago(j.fetched_at);
+    const cardCls=tm?`card ${tm.cardCls}`:'card';
+
+    return `<div class="${cardCls}" style="animation-delay:${i*15}ms">
+      <div class="card-top">
+        <div class="card-left">
+          <div class="avatar" style="background:${bg};color:${fg}">${init}</div>
+          <div class="title-wrap">
+            <div class="jtitle" title="${j.title}">${j.title}</div>
+            <div class="jcompany">${j.company}</div>
+          </div>
+        </div>
+        <div class="badges-col">
+          <span class="badge ${srcClass(j.source)}">${j.source||'—'}</span>
+          ${tm?`<span class="badge tier-badge ${tm.cls}">${tm.label}</span>`:''}
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="chip">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          ${j.location}
+        </span>
+        ${a?`<span class="chip" style="margin-left:auto;opacity:.5">${a}</span>`:''}
+      </div>
+      ${j.summary?`<div class="jdesc">${j.summary}</div>`:''}
+      <div class="card-foot">
+        <span class="cdate">${fmtDate(j.fetched_at)}</span>
+        ${hasUrl
+          ?`<a href="${j.url}" target="_blank" rel="noopener noreferrer" class="apply">Apply Now <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg></a>`
+          :`<span class="apply disabled">No link</span>`}
+      </div>
+    </div>`;
+  }).join('');
+
+  renderPager(pages);
+}
+
+// ── PAGER ─────────────────────────────────────────────────────────────────────
+function renderPager(pages) {
+  if(pages<=1){document.getElementById('pager').innerHTML='';return;}
+  let html=`<button class="pg" ${page===1?'disabled':''} onclick="goPage(${page-1})">←</button>`;
+  for(let i=1;i<=pages;i++){
+    if(i===1||i===pages||Math.abs(i-page)<=2)
+      html+=`<button class="pg${i===page?' on':''}" onclick="goPage(${i})">${i}</button>`;
+    else if(Math.abs(i-page)===3)
+      html+=`<button class="pg" disabled>…</button>`;
+  }
+  html+=`<button class="pg" ${page===pages?'disabled':''} onclick="goPage(${page+1})">→</button>`;
+  document.getElementById('pager').innerHTML=html;
+}
+
+function goPage(n){page=n;render();scrollTo({top:0,behavior:'smooth'})}
+
+// ── TIER FILTER ───────────────────────────────────────────────────────────────
+function setTier(btn,tier){
+  document.querySelectorAll('.tier-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  activeTier=tier; filter();
+}
+
+// ── TAG FILTER ────────────────────────────────────────────────────────────────
+document.querySelectorAll('.tag').forEach(t=>{
+  t.onclick=()=>{
+    document.querySelectorAll('.tag').forEach(x=>x.classList.remove('on'));
+    t.classList.add('on'); activeTag=t.dataset.tag; filter();
+  };
+});
+
+// ── CLEAR ─────────────────────────────────────────────────────────────────────
+function clearAll(){
+  document.getElementById('q').value='';
+  document.getElementById('src').value='';
+  document.getElementById('loc').value='';
+  document.getElementById('sort').value='newest';
+  document.querySelectorAll('.tag').forEach(t=>t.classList.remove('on'));
+  document.querySelector('.tag[data-tag=""]').classList.add('on');
+  document.querySelectorAll('.tier-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelector('.tier-btn[data-tier=""]').classList.add('on');
+  activeTag=''; activeTier=''; filter();
+}
+
+// ── EVENTS ────────────────────────────────────────────────────────────────────
+let deb;
+document.getElementById('q').addEventListener('input',()=>{clearTimeout(deb);deb=setTimeout(filter,220)});
+['src','loc','sort'].forEach(id=>document.getElementById(id).addEventListener('change',filter));
+
+load();
+</script>
+</body>
+</html>
